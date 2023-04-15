@@ -1,6 +1,7 @@
 ﻿namespace solutions.test.easy;
 using Shouldly;
 using solutions.easy;
+using solutions.Models;
 
 /// <summary>
 /// Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree.

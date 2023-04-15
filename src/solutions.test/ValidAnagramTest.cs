@@ -1,6 +1,8 @@
 ﻿namespace solutions.test.easy;
 using Shouldly;
 using solutions.easy;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Collections.Generic;
 
 /// <summary>
 /// Given two strings s and t, return true if t is an anagram of s, and false otherwise.
