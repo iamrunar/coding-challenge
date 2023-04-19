@@ -1,4 +1,4 @@
-﻿namespace solutions.test.easy;
+﻿namespace solutions.test.Leetcode;
 using Shouldly;
 using solutions.easy;
 
@@ -15,7 +15,7 @@ public class GenerateParenthesisTest
     {
         new GenerateParenthesisRecursionSolver()
             .GenerateParenthesis(n)
-            .ShouldBe(expected,true);
+            .ShouldBe(expected, true);
         new GenerateParenthesisBruteforceSolver()
             .GenerateParenthesis(n)
             .ShouldBe(expected, true);

@@ -1,4 +1,4 @@
-﻿namespace solutions.test.easy;
+﻿namespace solutions.test.Leetcode;
 using Shouldly;
 using solutions.easy;
 using solutions.Models;
@@ -14,14 +14,14 @@ public class SortedArrayToBSTTest
 {
     [Theory]
     [InlineData(new int[] { 1 }, new int[] { 1 })]
-    [InlineData(new int[] { 1,3 }, new int[] { 1, int.MinValue, 3 })]
-    [InlineData(new int[]{ -10,-3,0,5,9}, new int[] { 0, -10, 5, int.MinValue, -3, int.MinValue, 9 })]
+    [InlineData(new int[] { 1, 3 }, new int[] { 1, int.MinValue, 3 })]
+    [InlineData(new int[] { -10, -3, 0, 5, 9 }, new int[] { 0, -10, 5, int.MinValue, -3, int.MinValue, 9 })]
     public void Set103059_R03910null5(int[] nums, int[] expected)
     {
         new SortedArrayToBSTSolver()
             .SortedArrayToBST(nums)
             .VisitTreeNode(n => n)
-            .Select(x => x==null ? int.MinValue : x.val)
+            .Select(x => x == null ? int.MinValue : x.val)
             .ShouldBe(expected);
     }
 

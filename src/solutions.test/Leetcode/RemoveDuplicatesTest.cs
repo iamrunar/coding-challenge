@@ -1,7 +1,6 @@
-﻿namespace solutions.test.easy;
+﻿namespace solutions.test.Leetcode;
 using Shouldly;
 using solutions.easy;
-using solutions.Models;
 
 /// <summary>
 /// Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.
@@ -22,7 +21,7 @@ public class RemoveDuplicatesTest
     [InlineData(new int[] { 1, 3, 3 }, new int[] { 1, 3 }, 2)]
     [InlineData(new int[] { 1, 3, 3, 4 }, new int[] { 1, 3, 4 }, 3)]
     [InlineData(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }, new int[] { 0, 1, 2, 3, 4 }, 5)]
-    public void Set112_R12_2(int[]nums, int[] expectedNums, int expectedCount)
+    public void Set112_R12_2(int[] nums, int[] expectedNums, int expectedCount)
     {
         new RemoveDuplicatesSolver()
             .RemoveDuplicates(nums)
@@ -32,23 +31,5 @@ public class RemoveDuplicatesTest
         Array.Copy(nums, actualArrayCropped, expectedCount);
 
         actualArrayCropped.ShouldBe(expectedNums);
-    }
-}
-
-/// <summary>
-/// https://leetcode.com/problems/reverse-linked-list/
-/// </summary>
-public class ReverseLinkedListTest
-{
-    [Theory]
-    [InlineData(new int[] { 1, 2, 3, 4, 5 }, new int[] { 5, 4, 3, 2, 1 })]
-    [InlineData(new int[] { 1, 2 }, new int[] { 2, 1 })]
-    [InlineData(new int[] {  }, new int[] { })]
-    public void Set112_R12_2(int[] nums, int[] expectedNums)
-    {
-        new ReverseLinkedListSolver()
-            .ReverseList(nums.ToLinkedList())
-            .ToArray()
-            .ShouldBe(expectedNums);
     }
 }

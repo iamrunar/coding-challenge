@@ -21,6 +21,11 @@ public class LinkedListNode2
 
 public static class LinkedListNodeHelper
 {
+    public static LinkedListNode2[] ToLinkedListArray(this int[][] lists)
+    {
+        return lists.Select(n => n.ToLinkedList()).ToArray();
+    }
+
     public static LinkedListNode2 ToLinkedList(this int[] nums)
     {
         LinkedListNode2 head = null;

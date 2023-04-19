@@ -1,4 +1,4 @@
-﻿namespace solutions.test.easy;
+﻿namespace solutions.test.Leetcode;
 using Shouldly;
 using solutions.easy;
 
@@ -29,10 +29,10 @@ using solutions.easy;
 public class RotateArrayTest
 {
     [Theory]
-    [InlineData(new[] { 1, 2 }, 1, new[] { 2,1 })]
+    [InlineData(new[] { 1, 2 }, 1, new[] { 2, 1 })]
     [InlineData(new[] { 1, 2, 3, 4, 5, 6, 7 }, 3, new[] { 5, 6, 7, 1, 2, 3, 4 })]
     [InlineData(new[] { -1, -100, 3, 99 }, 2, new[] { 3, 99, -1, -100 })]
-    public void SetArrayAndStepsCount_RArray(int[]nums, int k, int[] expected)
+    public void SetArrayAndStepsCount_RArray(int[] nums, int k, int[] expected)
     {
         new RotateArraySolver()
             .Rotate(nums, k);
