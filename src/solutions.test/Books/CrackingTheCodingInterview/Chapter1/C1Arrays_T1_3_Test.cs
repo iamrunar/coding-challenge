@@ -13,7 +13,7 @@ public class C1Arrays_T1_3_Test
 {
     [Theory]
     [InlineData("Mr John Smith    ", 13, "Mr%20John%20Smith")]
-    public void T1_1_AllSymbolsIsUnique(string s1, int len, string expected)
+    public void SetGet(string s1, int len, string expected)
     {
         var sb = new StringBuilder(s1);
         new C1Arrays_T1_3_ReplaceSpaceToP20()

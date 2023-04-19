@@ -11,7 +11,7 @@ public class C1Arrays_T1_2_Test
     [InlineData("abc", "cla", false)]
     [InlineData("aab", "bab", false)]
     [InlineData("aab", "a", false)]
-    [InlineData("ac", "ca", false)]
+    [InlineData("ac", "ca", true)]
     [InlineData("aa", "a", false)]
     [InlineData("a", "aa", false)]
     [InlineData("aba", "bab", false)]
@@ -19,6 +19,9 @@ public class C1Arrays_T1_2_Test
     {
         new C1Arrays_T1_2_PolindromSolver()
             .IsPolindrom(s1, s2)
+            .ShouldBe(expected);
+        new C1Arrays_T1_2_PolindromSolver()
+            .IsPolindrom2(s1, s2)
             .ShouldBe(expected);
     }
 }
