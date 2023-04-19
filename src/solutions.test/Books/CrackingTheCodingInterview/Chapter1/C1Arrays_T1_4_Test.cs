@@ -14,7 +14,7 @@ public class C1Arrays_T1_4_Test
     [InlineData("pale", "bake", false)]
 
     //added
-    [InlineData("pale", "palse", true)]
+    [InlineData("pale", "pacle", true)]
     [InlineData("pale", "pales", true)]
     [InlineData("pale", "apale", true)]
 
@@ -31,6 +31,9 @@ public class C1Arrays_T1_4_Test
     {
         new C1Arrays_T1_4_IsOneModificationSolver()
             .IsOneModification(s1,s2)
+            .ShouldBe(expected);
+        new C1Arrays_T1_4_IsOneModificationSolver()
+            .IsOneModification2(s1, s2)
             .ShouldBe(expected);
     }
 }
