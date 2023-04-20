@@ -48,4 +48,31 @@ public class C1Arrays_T1_1_AllSymbolsIsUniqueSolver
 
         return true;
     }
+
+    ///// <summary>
+    ///// Custom structure.
+    ///// </summary>
+    ///// <param name="text"></param>
+    ///// <returns></returns>
+    //public bool CheckThatAllSymbolsIsUnique3(string text)
+    //{
+    //    text = text.ToLower();
+    //    int contained = 0;
+
+    //    foreach (var ch in text)
+    //    {
+    //        char c = (char)(ch - 'a');
+    //        if (TestBit(contained, c))
+    //        {
+    //            return false;
+    //        }
+
+    //        SetBit(ref contained,c);
+    //    }
+
+    //    return true;
+
+    //    bool TestBit(int where, char number) => (where & (1 << number)) > 0;
+    //    void SetBit(ref int where, char number) => where |= 1 << number;
+    //}
 }
