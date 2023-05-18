@@ -4,11 +4,9 @@ public class LinkedListNode2
 {
     public LinkedListNode2 next;
     public int val;
-    public int key;
 
     public LinkedListNode2(int val, LinkedListNode2 next = null)
     {
-        key = key;
         this.val = val;
         this.next = next;
     }
