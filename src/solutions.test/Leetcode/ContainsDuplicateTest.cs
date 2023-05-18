@@ -1,6 +1,8 @@
-﻿namespace solutions.test.easy;
+﻿namespace solutions.test.Leetcode;
 using Shouldly;
 using solutions.easy;
+using System.Diagnostics.Metrics;
+using System.Globalization;
 
 /// <summary>
 /// https://neetcode.io/practice
@@ -16,7 +18,7 @@ using solutions.easy;
 public class ContainsDuplicateTest
 {
     [Theory]
-    [InlineData(new int[] { 1,2,3,1 }, true)]
+    [InlineData(new int[] { 1, 2, 3, 1 }, true)]
     [InlineData(new int[] { 1, 2, 3, 4 }, false)]
     [InlineData(new int[] { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 }, true)]
     public void Numse1231_RT(int[] nums, bool expected)

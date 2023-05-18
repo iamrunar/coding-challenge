@@ -1,4 +1,4 @@
-﻿namespace solutions.test.easy;
+﻿namespace solutions.test.Leetcode;
 using Shouldly;
 using solutions.easy;
 using System.ComponentModel;
