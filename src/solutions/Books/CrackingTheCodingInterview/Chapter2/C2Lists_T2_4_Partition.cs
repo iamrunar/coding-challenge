@@ -6,16 +6,16 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
     {
         public LinkedListNode2 Partition(LinkedListNode2 head, int x)
         {
-            LinkedListNode2 hLittle = null,pLittle = null,
-                            hGreater = null,pGreater = null,
-                            hEq = null,pEq = null,
-                            current=head, next;
-            while (current!=null)
+            LinkedListNode2 hLittle = null, pLittle = null,
+                            hGreater = null, pGreater = null,
+                            hEq = null, pEq = null,
+                            current = head, next;
+            while (current != null)
             {
                 next = current.next;
                 if (current.val < x)
                 {
-                    if (hLittle==null)
+                    if (hLittle == null)
                     {
                         hLittle = pLittle = current;
                     }
@@ -27,7 +27,7 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
                 }
                 else if (current.val > x)
                 {
-                    if (hGreater==null)
+                    if (hGreater == null)
                     {
                         hGreater = pGreater = current;
                     }
@@ -39,7 +39,7 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
                 }
                 else //n.val == x
                 {
-                    if (hEq==null)
+                    if (hEq == null)
                     {
                         hEq = pEq = current;
                     }
@@ -52,46 +52,47 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
                 current = next;
             }
             var h = hLittle ?? hEq ?? hGreater;
-            if (pLittle !=null)
+            if (pLittle != null)
             {
                 pLittle.next = hEq ?? hGreater;
             }
-            if (pEq!=null)
+            if (pEq != null)
             {
                 pEq.next = hGreater;
             }
-            if (pGreater!=null)
+            if (pGreater != null)
             {
                 pGreater.next = null;
             }
             return hLittle ?? hEq ?? hGreater;
         }
 
-        public LinkedListNode2 Partition2(LinkedListNode2 head, int x)
+        public LinkedListNode2 Partition2(LinkedListNode2 inputHead, int x)
         {
-            LinkedListNode2 h=head,t=head, n = head, next;
+            LinkedListNode2 head = inputHead,
+                            tail = inputHead,
+                            node = inputHead,
+                            next;
 
-            while (n!=null)
+            while (node != null)
             {
-                next = n.next;
+                next = node.next;
 
-                if (n.val<x)
+                if (node.val < x)
                 {
-                    if (h!=n)
-                        n.next = h;
-                    h=n;
+                    node.next = head;
+                    head = node;
                 }
-                else if (n.val>=x)
+                else if (node.val >= x)
                 {
-                    if (t!=n)
-                    t.next = n;
-                    t = n;
+                    tail.next = node;
+                    tail = node;
                 }
 
-                n = next;
+                node = next;
             }
-            t.next = null;
-            return h ;
+            tail.next = null;
+            return head;
         }
     }
 }
