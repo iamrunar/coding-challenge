@@ -55,4 +55,24 @@ public static class LinkedListNodeHelper
         }
         return result.ToArray();
     }
+
+    public static void ConnectTo(this LinkedListNode2 head, LinkedListNode2 what)
+    {
+        while (head.next!=null) head=head.next;
+        head.next = what;
+    }
+
+
+    public static void Connect(this LinkedListNode2 head, int whatIndex, int toIndex)
+    {
+        var nodes = new List<LinkedListNode2>();
+
+        while (head!=null) 
+        {
+            nodes.Add(head);
+            head=head.next;
+        }
+
+        nodes[whatIndex].ConnectTo(nodes[toIndex]);
+    }
 }

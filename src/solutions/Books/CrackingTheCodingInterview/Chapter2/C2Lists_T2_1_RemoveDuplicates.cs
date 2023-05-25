@@ -6,6 +6,8 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
     {
         public LinkedListNode2 RemoveDuplicates(LinkedListNode2 head)
         {
+            //cpu O(n)
+            //mem O(n)
             HashSet<int> keys = new HashSet<int>();
 
             LinkedListNode2 newHead = null, newCurrent = null;
@@ -30,6 +32,31 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
                 current = current.next;
             }
             return newHead;
+        }
+
+        public LinkedListNode2 RemoveDuplicates2(LinkedListNode2 head)
+        {
+            //cpu O(n^2)
+            //mem O(1)
+            LinkedListNode2 current = head;
+            while (current != null)
+            {
+                LinkedListNode2 runner = current;
+                while (runner.next!=null)
+                {
+                    if (runner.next.val == current.val)
+                    {
+                        runner.next = runner.next.next;
+                    }
+                    else
+                    {
+                        runner = runner.next;
+                    }
+                }
+
+                current = current.next;
+            }
+            return head;
         }
     }
 }
