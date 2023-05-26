@@ -24,6 +24,7 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 
             return current.val;
         }
+        
         public int GetRingNode2(LinkedListNode2 head)
         {
             HashSet<LinkedListNode2> nodes = new HashSet<LinkedListNode2>();
