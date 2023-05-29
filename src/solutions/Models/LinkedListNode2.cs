@@ -1,5 +1,23 @@
 ﻿namespace solutions.Models;
 
+
+public class LinkedListNode2Base<T>
+{
+    public LinkedListNode2Base<T> next;
+    public T val;
+
+    public LinkedListNode2Base(T val, LinkedListNode2Base<T> next = null)
+    {
+        this.val = val;
+        this.next = next;
+    }
+
+    public override string ToString()
+    {
+        return val.ToString();
+    }
+}
+
 public class LinkedListNode2
 {
     public LinkedListNode2 next;
