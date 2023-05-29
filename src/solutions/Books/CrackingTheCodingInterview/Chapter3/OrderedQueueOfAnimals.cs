@@ -3,8 +3,8 @@ using solutions.Models;
 
 public class OrderedQueueOfAnimals
 {
-    private LinkedListNode2Base<Animal> _cats = null;
-    private LinkedListNode2Base<Animal> _dogs = null;
+    private LinkedListNode3<Animal> _cats = null;
+    private LinkedListNode3<Animal> _dogs = null;
 
     public Animal? DequeueAny()
     {
@@ -56,8 +56,8 @@ public class OrderedQueueOfAnimals
 
     public void Enqueue(Animal animal)
     {
-        var newAnimalNode = new LinkedListNode2Base<Animal>(animal);
-        LinkedListNode2Base<Animal> list = GetListOfAnimal(animal);
+        var newAnimalNode = new LinkedListNode3<Animal>(animal);
+        LinkedListNode3<Animal> list = GetListOfAnimal(animal);
         var olderAnimalNode = GetPreviousOlderAnimal(list, animal.Yo);
         if (olderAnimalNode == null)
         {
@@ -70,7 +70,7 @@ public class OrderedQueueOfAnimals
         }
     }
 
-    private void SetHeadForList(LinkedListNode2Base<Animal> newAnimalNode)
+    private void SetHeadForList(LinkedListNode3<Animal> newAnimalNode)
     {
         if (newAnimalNode.val is Dog)
         {
@@ -84,7 +84,7 @@ public class OrderedQueueOfAnimals
         }
     }
 
-    private LinkedListNode2Base<Animal> GetListOfAnimal(Animal animal)
+    private LinkedListNode3<Animal> GetListOfAnimal(Animal animal)
     {
         if (animal is Dog dog)
         {
@@ -98,9 +98,9 @@ public class OrderedQueueOfAnimals
             throw new InvalidOperationException();
     }
 
-    private LinkedListNode2Base<T>? GetPreviousOlderAnimal<T>(LinkedListNode2Base<T> head, int yo) where T: Animal
+    private LinkedListNode3<T>? GetPreviousOlderAnimal<T>(LinkedListNode3<T> head, int yo) where T: Animal
     {
-        LinkedListNode2Base<T>? previous = null;
+        LinkedListNode3<T>? previous = null;
         while (head!=null)
         {
             if (yo > head.val.Yo)

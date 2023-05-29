@@ -14,7 +14,7 @@ namespace solutions.test.Books.CrackingTheCodingInterview.Chapter2
         public void GetSet(int[] first, int[] second, int[] expected)
         {
             new C2Lists_T2_5_Sum()
-                .Sum(first.ToLinkedList(), second.ToLinkedList())
+                .Sum(first.ToLinkedList<int>(), second.ToLinkedList<int>())
                 .ToArray()
                 .ShouldBe(expected);
         }

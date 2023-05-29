@@ -20,7 +20,7 @@ namespace solutions.test.Books.CrackingTheCodingInterview.Chapter2
         public void GetSet(int[] input, int x, int[] expected)
         {
             new C2Lists_T2_4_Partition()
-                .Partition(input.ToLinkedList(), x)
+                .Partition(input.ToLinkedList<int>(), x)
                 .ToArray()
                 .ShouldBe(expected);
         }
@@ -40,7 +40,7 @@ namespace solutions.test.Books.CrackingTheCodingInterview.Chapter2
         {
             //Буквальная реализация. Слева -- меньшие числа, справа -- большие или равные.
             new C2Lists_T2_4_Partition()
-                .Partition2(input.ToLinkedList(), x)
+                .Partition2(input.ToLinkedList<int>(), x)
                 .ToArray()
                 .ShouldBe(expected);
         }

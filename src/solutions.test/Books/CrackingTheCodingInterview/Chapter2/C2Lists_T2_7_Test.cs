@@ -12,9 +12,9 @@ namespace solutions.test.Books.CrackingTheCodingInterview.Chapter2
         [InlineData(new[] { 1,2 }, new []{3,4}, new []{10,11})]
         public void GetSet(int[] array1, int[]array2, int[]tailOfArray1And2)
         {
-            var list1 = array1.ToLinkedList();
-            var list2 = array2.ToLinkedList();
-            var tailOfList1And2 = tailOfArray1And2.ToLinkedList();
+            var list1 = array1.ToLinkedList<int>();
+            var list2 = array2.ToLinkedList<int>();
+            var tailOfList1And2 = tailOfArray1And2.ToLinkedList<int>();
             list1.ConnectTo(tailOfList1And2);
             list2.ConnectTo(tailOfList1And2);
             new C2Lists_T2_7_GetConnectionNode()

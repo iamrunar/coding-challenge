@@ -11,7 +11,7 @@ namespace solutions.test.Books.CrackingTheCodingInterview.Chapter2
         [InlineData(new[] { 1,2,3,4,5 }, 4,0, 1)]
         public void GetSet(int[] input, int connectWhat, int connectTo, int expectedRingNodeValue)
         {
-            var list1 = input.ToLinkedList();
+            var list1 = input.ToLinkedList<int>();
             list1.Connect(connectWhat, connectTo);
             
             new C2Lists_T2_8_GetRingNode()

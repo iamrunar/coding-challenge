@@ -1,5 +1,5 @@
 ﻿using solutions.Models;
-using ListNode = solutions.Models.LinkedListNode2;
+using ListNode = solutions.Models.LinkedListNode3<int>;
 
 namespace solutions.easy;
 

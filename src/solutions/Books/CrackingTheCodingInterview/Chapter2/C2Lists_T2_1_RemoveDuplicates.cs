@@ -1,23 +1,24 @@
 ﻿using solutions.Models;
+using ListNode = solutions.Models.LinkedListNode3<int>;
 
 namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 {
     public class C2Lists_T2_1_RemoveDuplicates
     {
-        public LinkedListNode2 RemoveDuplicates(LinkedListNode2 head)
+        public ListNode RemoveDuplicates(ListNode head)
         {
             //cpu O(n)
             //mem O(n)
             HashSet<int> keys = new HashSet<int>();
 
-            LinkedListNode2 newHead = null, newCurrent = null;
-            LinkedListNode2 current = head;
+            ListNode newHead = null, newCurrent = null;
+            ListNode current = head;
             while (current!=null)
             {
                 if (!keys.Contains(current.val))
                 {
                     keys.Add(current.val);
-                    var node = new LinkedListNode2(current.val);
+                    var node = new ListNode(current.val);
                     if (newCurrent != null)
                     {
                         newCurrent.next = node;
@@ -34,14 +35,14 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
             return newHead;
         }
 
-        public LinkedListNode2 RemoveDuplicates2(LinkedListNode2 head)
+        public ListNode RemoveDuplicates2(ListNode head)
         {
             //cpu O(n^2)
             //mem O(1)
-            LinkedListNode2 current = head;
+            ListNode current = head;
             while (current != null)
             {
-                LinkedListNode2 runner = current;
+                ListNode runner = current;
                 while (runner.next!=null)
                 {
                     if (runner.next.val == current.val)

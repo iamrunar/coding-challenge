@@ -1,12 +1,12 @@
-using solutions.Models;
+using ListNode = solutions.Models.LinkedListNode3<int>;
 
 namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 {
     public class C2Lists_T2_4_Partition
     {
-        public LinkedListNode2 Partition(LinkedListNode2 head, int x)
+        public ListNode Partition(ListNode head, int x)
         {
-            LinkedListNode2 hLittle = null, pLittle = null,
+            ListNode hLittle = null, pLittle = null,
                             hGreater = null, pGreater = null,
                             hEq = null, pEq = null,
                             current = head, next;
@@ -67,9 +67,9 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
             return hLittle ?? hEq ?? hGreater;
         }
 
-        public LinkedListNode2 Partition2(LinkedListNode2 inputHead, int x)
+        public ListNode Partition2(ListNode inputHead, int x)
         {
-            LinkedListNode2 head = inputHead,
+            ListNode head = inputHead,
                             tail = inputHead,
                             node = inputHead,
                             next;

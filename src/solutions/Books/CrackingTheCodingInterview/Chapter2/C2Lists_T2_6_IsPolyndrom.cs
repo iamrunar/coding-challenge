@@ -1,15 +1,15 @@
-using solutions.Models;
+using ListNode = solutions.Models.LinkedListNode3<int>;
 
 namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 {
     public class C2Lists_T2_6_IsPolyndrom
     {
-        public bool IsPolyndrom(LinkedListNode2 node)
+        public bool IsPolyndrom(ListNode node)
         {
-            LinkedListNode2 resultIfWeFinished = node;
+            ListNode resultIfWeFinished = node;
             return CheckEqualAndGetNextHeadNode(node, node) == resultIfWeFinished;
 
-            LinkedListNode2 CheckEqualAndGetNextHeadNode(LinkedListNode2 node, LinkedListNode2 head)
+            ListNode CheckEqualAndGetNextHeadNode(ListNode node, ListNode head)
             {
                 if (node == null) return head;
 
@@ -22,10 +22,10 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
             }
         }
 
-        public bool IsPolyndrom2(LinkedListNode2 node)
+        public bool IsPolyndrom2(ListNode node)
         {
             Stack<int> firstPartOfList = new Stack<int>(node.val);
-            LinkedListNode2 slow = node, fast=node;
+            ListNode slow = node, fast=node;
 
             do
             {

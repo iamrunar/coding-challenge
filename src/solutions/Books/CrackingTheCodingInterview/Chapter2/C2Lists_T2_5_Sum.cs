@@ -1,12 +1,12 @@
-using solutions.Models;
+using ListNode = solutions.Models.LinkedListNode3<int>;
 
 namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 {
     public class C2Lists_T2_5_Sum
     {
-        public LinkedListNode2 Sum(LinkedListNode2 first, LinkedListNode2 second)
+        public ListNode Sum(ListNode first, ListNode second)
         {
-            LinkedListNode2 p3 = null, h3 = null, p1 = first, p2 = second;
+            ListNode p3 = null, h3 = null, p1 = first, p2 = second;
             bool addon = false;
             while (p1 != null || p2 != null || addon)
             {
@@ -16,7 +16,7 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
                 var sumOfNumbers = n1 + n2 + carry;
                 addon = sumOfNumbers > 9;
 
-                var newP3Node = new LinkedListNode2(sumOfNumbers % 10);
+                var newP3Node = new ListNode(sumOfNumbers % 10);
                 if (p3 != null) p3.next = newP3Node;
 
                 p3 = newP3Node;

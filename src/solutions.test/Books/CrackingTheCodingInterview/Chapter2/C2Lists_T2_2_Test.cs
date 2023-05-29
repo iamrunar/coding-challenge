@@ -13,13 +13,13 @@ namespace solutions.test.Books.CrackingTheCodingInterview.Chapter2
         public void GetSet(int[] input, int k, int expected)
         {
             new C2Lists_T2_2_FindKElement()
-                .FindKElement(input.ToLinkedList(), k)
+                .FindKElement(input.ToLinkedList<int>(), k)
                 .ShouldBe(expected);
             new C2Lists_T2_2_FindKElement()
-                .FindKElement2(input.ToLinkedList(), k)
+                .FindKElement2(input.ToLinkedList<int>(), k)
                 .ShouldBe(expected);
             new C2Lists_T2_2_FindKElement()
-                .FindKElement3(input.ToLinkedList(), k)
+                .FindKElement3(input.ToLinkedList<int>(), k)
                 .ShouldBe(expected);
         }
     }

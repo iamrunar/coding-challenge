@@ -1,12 +1,12 @@
 ﻿namespace solutions.Models;
 
 
-public class LinkedListNode2Base<T>
+public class LinkedListNode3<T>
 {
-    public LinkedListNode2Base<T> next;
+    public LinkedListNode3<T> next;
     public T val;
 
-    public LinkedListNode2Base(T val, LinkedListNode2Base<T> next = null)
+    public LinkedListNode3(T val, LinkedListNode3<T> next = null)
     {
         this.val = val;
         this.next = next;
@@ -18,37 +18,21 @@ public class LinkedListNode2Base<T>
     }
 }
 
-public class LinkedListNode2
+
+public static class LinkedListNode3BaseHelper
 {
-    public LinkedListNode2 next;
-    public int val;
-
-    public LinkedListNode2(int val, LinkedListNode2 next = null)
-    {
-        this.val = val;
-        this.next = next;
-    }
-
-    public override string ToString()
-    {
-        return val.ToString();
-    }
-}
-
-public static class LinkedListNodeHelper
-{
-    public static LinkedListNode2[] ToLinkedListArray(this int[][] lists)
+    public static LinkedListNode3<T>[] ToLinkedListArray<T>(this T[][] lists)
     {
         return lists.Select(n => n.ToLinkedList()).ToArray();
     }
 
-    public static LinkedListNode2 ToLinkedList(this int[] nums)
+    public static LinkedListNode3<T> ToLinkedList<T>(this T[] nums)
     {
-        LinkedListNode2 head = null;
-        LinkedListNode2 lastNode = null;
+        LinkedListNode3<T> head = null;
+        LinkedListNode3<T> lastNode = null;
         foreach (var n in nums)
         {
-            var node = new LinkedListNode2(n);
+            var node = new LinkedListNode3<T>(n);
             if (head == null)
             {
                 head = node;
@@ -62,9 +46,9 @@ public static class LinkedListNodeHelper
         return head;
     }
 
-    public static int[] ToArray(this LinkedListNode2 head)
+    public static T[] ToArray<T>(this LinkedListNode3<T> head)
     {
-        List<int> result = new List<int>();
+        List<T> result = new List<T>();
         var c = head;
         while (c != null)
         {
@@ -74,16 +58,16 @@ public static class LinkedListNodeHelper
         return result.ToArray();
     }
 
-    public static void ConnectTo(this LinkedListNode2 head, LinkedListNode2 what)
+    public static void ConnectTo<T>(this LinkedListNode3<T> head, LinkedListNode3<T> what)
     {
         while (head.next!=null) head=head.next;
         head.next = what;
     }
 
 
-    public static void Connect(this LinkedListNode2 head, int whatIndex, int toIndex)
+    public static void Connect<T>(this LinkedListNode3<T> head, int whatIndex, int toIndex)
     {
-        var nodes = new List<LinkedListNode2>();
+        var nodes = new List<LinkedListNode3<T>>();
 
         while (head!=null) 
         {
