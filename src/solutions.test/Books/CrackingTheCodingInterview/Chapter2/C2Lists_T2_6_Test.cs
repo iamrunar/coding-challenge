@@ -15,10 +15,10 @@ namespace solutions.test.Books.CrackingTheCodingInterview.Chapter2
         public void GetSet(int[] input, bool expected)
         {
             new C2Lists_T2_6_IsPolyndrom()
-                .IsPolyndrom(input.ToLinkedList())
+                .IsPolyndrom(input.ToLinkedList<int>())
                 .ShouldBe(expected);
             new C2Lists_T2_6_IsPolyndrom()
-                .IsPolyndrom2(input.ToLinkedList())
+                .IsPolyndrom2(input.ToLinkedList<int>())
                 .ShouldBe(expected);
         }
     }

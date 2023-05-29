@@ -15,12 +15,12 @@ public class ReverseLinkedListTest
     public void Set112_R12_2(int[] nums, int[] expectedNums)
     {
         new ReverseLinkedListRecursionSolver()
-            .ReverseList(nums.ToLinkedList())
+            .ReverseList(nums.ToLinkedList<int>())
             .ToArray()
             .ShouldBe(expectedNums);
 
         new ReverseLinkedListValuesLinearSolver()
-            .ReverseList(nums.ToLinkedList())
+            .ReverseList(nums.ToLinkedList<int>())
             .ToArray()
             .ShouldBe(expectedNums);
     }

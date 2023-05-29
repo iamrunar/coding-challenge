@@ -1,15 +1,15 @@
-using solutions.Models;
+using ListNode = solutions.Models.LinkedListNode3<int>;
 
 namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 {
     public class C2Lists_T2_7_GetConnectionNode
     {
-        public LinkedListNode2 GetConnectionNode(LinkedListNode2 list1, LinkedListNode2 list2)
+        public ListNode GetConnectionNode(ListNode list1, ListNode list2)
         {
-            HashSet<LinkedListNode2> nodesOfFirstList = new HashSet<LinkedListNode2>();
-            for (LinkedListNode2 c1 = list1; c1!=null; c1=c1.next) nodesOfFirstList.Add(c1);
+            HashSet<ListNode> nodesOfFirstList = new HashSet<ListNode>();
+            for (ListNode c1 = list1; c1!=null; c1=c1.next) nodesOfFirstList.Add(c1);
 
-            for (LinkedListNode2 c2 = list2; c2!=null; c2=c2.next) 
+            for (ListNode c2 = list2; c2!=null; c2=c2.next) 
                 if (nodesOfFirstList.Contains(c2))
                 {
                     return c2;
@@ -18,9 +18,9 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
             return null;
         }
 
-        public LinkedListNode2 GetConnectionNode2(LinkedListNode2 list1, LinkedListNode2 list2)
+        public ListNode GetConnectionNode2(ListNode list1, ListNode list2)
         {
-            LinkedListNode2 p1 = list1, p2 = list2;
+            ListNode p1 = list1, p2 = list2;
 
             int length1 = getLength(p1), 
                 length2=getLength(p2);
@@ -35,7 +35,7 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 
             return getFirstEqualsNode(p1,p2);
 
-            int getLength(LinkedListNode2 head)
+            int getLength(ListNode head)
             {
                 int l = 0;
                 while (head!=null) 
@@ -46,13 +46,13 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
                 return l;
             }
 
-            LinkedListNode2 skip(LinkedListNode2 head, int skipNElements)
+            ListNode skip(ListNode head, int skipNElements)
             {
                 while (skipNElements-->0) head=head.next;
                 return head;
             }
 
-            LinkedListNode2 getFirstEqualsNode(LinkedListNode2 head1, LinkedListNode2 head2)
+            ListNode getFirstEqualsNode(ListNode head1, ListNode head2)
             {
                 while (head1!=null)
                 {

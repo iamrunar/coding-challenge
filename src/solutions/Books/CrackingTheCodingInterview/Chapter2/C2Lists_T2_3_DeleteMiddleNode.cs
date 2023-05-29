@@ -1,12 +1,12 @@
-using solutions.Models;
+using ListNode = solutions.Models.LinkedListNode3<int>;
 
 namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 {
     public class C2Lists_T2_3_DeleteMiddleNode
     {
-        public void DeleteMiddleNode(ref LinkedListNode2 head)
+        public void DeleteMiddleNode(ref ListNode head)
         {
-            LinkedListNode2 previousMiddleNode = GetPreviousMiddleNode(head);
+            ListNode previousMiddleNode = GetPreviousMiddleNode(head);
             if (previousMiddleNode == null)
             {
                 head = head.next;
@@ -14,11 +14,11 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
             }
             RemoveNextNode(previousMiddleNode);
 
-            LinkedListNode2 GetPreviousMiddleNode(LinkedListNode2 h)
+            ListNode GetPreviousMiddleNode(ListNode h)
             {
                 var runner = h;
                 var middle = h;
-                LinkedListNode2 previous = null;
+                ListNode previous = null;
                 while (runner.next!=null && runner.next.next!=null)
                 {
                     previous = middle;
@@ -30,7 +30,7 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
                 return previous;
             }
 
-            void RemoveNextNode(LinkedListNode2 previous)
+            void RemoveNextNode(ListNode previous)
             {
                 previous.next = previous.next.next;
             }

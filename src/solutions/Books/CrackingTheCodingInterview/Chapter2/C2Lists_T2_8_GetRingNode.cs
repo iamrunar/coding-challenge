@@ -1,12 +1,12 @@
-using solutions.Models;
+using ListNode = solutions.Models.LinkedListNode3<int>;
 
 namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 {
     public class C2Lists_T2_8_GetRingNode
     {
-        public int GetRingNode(LinkedListNode2 head)
+        public int GetRingNode(ListNode head)
         {
-            LinkedListNode2 runner=head, current=head;
+            ListNode runner=head, current=head;
 
             do
             {
@@ -24,9 +24,10 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 
             return current.val;
         }
-        public int GetRingNode2(LinkedListNode2 head)
+        
+        public int GetRingNode2(ListNode head)
         {
-            HashSet<LinkedListNode2> nodes = new HashSet<LinkedListNode2>();
+            HashSet<ListNode> nodes = new HashSet<ListNode>();
             while (true)
             {
                 if (nodes.Contains(head)) return head.val;

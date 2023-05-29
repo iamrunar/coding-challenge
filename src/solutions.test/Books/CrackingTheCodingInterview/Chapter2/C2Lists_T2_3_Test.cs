@@ -14,7 +14,7 @@ namespace solutions.test.Books.CrackingTheCodingInterview.Chapter2
         [InlineData(new[] { 1,2,3,4,5,6 }, new int[]{1,2,4,5,6})]
         public void GetSet(int[] input, int[] expected)
         {
-            var head = input.ToLinkedList();
+            var head = input.ToLinkedList<int>();
             new C2Lists_T2_3_DeleteMiddleNode()
                 .DeleteMiddleNode(ref head);
 

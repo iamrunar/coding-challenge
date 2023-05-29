@@ -15,11 +15,11 @@ namespace solutions.test.Books.CrackingTheCodingInterview.Chapter2
         public void GetSet(int[] input, int[] expected)
         {
             new C2Lists_T2_1_RemoveDuplicates()
-                .RemoveDuplicates(input.ToLinkedList())
+                .RemoveDuplicates(input.ToLinkedList<int>())
                 .ToArray()
                 .ShouldBe(expected);
             new C2Lists_T2_1_RemoveDuplicates()
-                .RemoveDuplicates2(input.ToLinkedList())
+                .RemoveDuplicates2(input.ToLinkedList<int>())
                 .ToArray()
                 .ShouldBe(expected);
         }

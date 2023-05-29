@@ -13,7 +13,7 @@ public class MergeKListsTest
     public void Set112_R12_2(int[][] lists, int[] expected)
     {
         new MergeKListsSolver()
-            .MergeKLists(lists.ToLinkedListArray())
+            .MergeKLists(lists.ToLinkedListArray<int>())
             .ToArray()
             .ShouldBe(expected);
     }

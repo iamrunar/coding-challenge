@@ -1,12 +1,12 @@
-using solutions.Models;
+using ListNode = solutions.Models.LinkedListNode3<int>;
 
 namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 {
     public class C2Lists_T2_2_FindKElement
     {
-        public int FindKElement(LinkedListNode2 head, int k)
+        public int FindKElement(ListNode head, int k)
         {
-            LinkedListNode2 current = head, previous = head;
+            ListNode current = head, previous = head;
             var delta = 0;
             while (current.next != null)
             {
@@ -18,10 +18,10 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
 
             return previous.val;
         }
-        public int FindKElement3(LinkedListNode2 head, int k)
+        public int FindKElement3(ListNode head, int k)
         {
-            LinkedListNode2 last = head;
-            LinkedListNode2 knode = head;
+            ListNode last = head;
+            ListNode knode = head;
 
             for (int i = 0; i < k; i++)
             {
@@ -38,11 +38,11 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter2
             return knode.val;
         }
 
-        public int FindKElement2(LinkedListNode2 head, int k)
+        public int FindKElement2(ListNode head, int k)
         {
             return FindKElement2Internal(head, k, head).val;
 
-            LinkedListNode2 FindKElement2Internal(LinkedListNode2 current, int ck, LinkedListNode2 previous)
+            ListNode FindKElement2Internal(ListNode current, int ck, ListNode previous)
             {
                 if (current.next == null) return previous;
 

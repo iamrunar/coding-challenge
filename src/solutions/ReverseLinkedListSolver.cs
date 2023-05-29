@@ -1,17 +1,17 @@
-﻿using solutions.Models;
+﻿using ListNode = solutions.Models.LinkedListNode3<int>;
 
 namespace solutions.easy;
 
 public class ReverseLinkedListRecursionSolver
 {
-    public LinkedListNode2 ReverseList(LinkedListNode2 n)
+    public ListNode ReverseList(ListNode n)
     {
         if (n == null || n.next == null)
         {
             return n;
         }
 
-        LinkedListNode2 newHead = ReverseList(n.next);
+        ListNode newHead = ReverseList(n.next);
 
         n.next.next = n;
         n.next = null;
@@ -22,9 +22,9 @@ public class ReverseLinkedListRecursionSolver
 
 public class ReverseLinkedListValuesLinearSolver
 {
-    public LinkedListNode2 ReverseList1(LinkedListNode2 n)
+    public ListNode ReverseList1(ListNode n)
     {
-        Stack<LinkedListNode2> stack = new Stack<LinkedListNode2>();
+        Stack<ListNode> stack = new Stack<ListNode>();
 
         var c = n;
         while (c!=null)
@@ -34,7 +34,7 @@ public class ReverseLinkedListValuesLinearSolver
         }
 
         c = null;
-        while (stack.TryPop(out LinkedListNode2 p))
+        while (stack.TryPop(out ListNode p))
         {
             if (c == null)
             {
@@ -47,9 +47,9 @@ public class ReverseLinkedListValuesLinearSolver
         }
         return n;
     }
-    public LinkedListNode2 ReverseList(LinkedListNode2 n)
+    public ListNode ReverseList(ListNode n)
     {
-        LinkedListNode2 next = n, prev = null;
+        ListNode next = n, prev = null;
 
         while (next != null)
         {
