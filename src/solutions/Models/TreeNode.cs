@@ -1,5 +1,7 @@
-﻿namespace solutions.Models;
+﻿//rename to solutions.Common.Models
+namespace solutions.Models;
 
+//rename to IntTreeNode
 public class TreeNode
 {
     public int val;
@@ -13,6 +15,7 @@ public class TreeNode
     }
 }
 
+//rename to IntTreeNodeConverter
 public static class TreeNodeConverter
 {
     public static IEnumerable<T> VisitTreeNode<T>(this TreeNode head, Func<TreeNode?, T> selector)

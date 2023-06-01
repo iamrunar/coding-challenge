@@ -2,7 +2,7 @@ namespace solutions.Books.CrackingTheCodingInterview.Chapter4.Task4_2;
 
 using solutions.Books.CrackingTheCodingInterview.Chapter4.Models.Tree;
 
-public class BinaryTreeSearchFromAscSortedArray
+public class BinaryTreeFromArray
 {
     public BinaryTreeNode<T> Make<T>(T []input)
     {

@@ -1,4 +1,5 @@
-﻿namespace solutions.Models;
+﻿//rename to solutions.Common.Models
+namespace solutions.Models;
 
 
 public class LinkedListNode3<T>
