@@ -11,12 +11,11 @@ public class T4_4_Test
     [InlineData(new[] { 1 }, true)]
     [InlineData(new[] { 1, 2 }, true)]
     [InlineData(new[] { 1, 2, 3 }, true)]
-    [InlineData(new[] { 1, 2, 3 }, true)]
     [InlineData(new[] { 1, 2, 3, 4, -1, -1, -1, 8, -1, -1, -1, -1, -1, -1, 15 }, false)]
     public void GetSet(int[] input, bool expected)
     {
         new BalancedChecker()
-            .IsBalanced(input.MakeBinaryTree(-1))
+            .IsBalanced(input.MakeSimpleBinaryTree(-1))
             .ShouldBe(expected);
     }
 }

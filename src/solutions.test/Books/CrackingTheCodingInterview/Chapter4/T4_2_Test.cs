@@ -17,7 +17,7 @@ public class T4_2_Test
     {
         new BinaryTreeFromArray()
             .Make(input)
-            .SymmetricTrevel<int>()
+            .GetOrderedArrayOfBST<int>()
             .Select(n => n == null ? -1 : n.Val)
             .ShouldBe(prefixTraversal);
     }

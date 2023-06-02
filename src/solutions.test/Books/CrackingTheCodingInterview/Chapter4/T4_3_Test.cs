@@ -15,7 +15,7 @@ public class T4_3_Test
     public void GetSet(int[] input, params int[][] expectedArrays)
     {
         new LinkedListForEveryDepth()
-            .GetLinkedListForEveryDepth(input.MakeBinaryTree(-1))
+            .GetLinkedListForEveryDepth(input.MakeSimpleBinaryTree(-1))
             .Select(l=>l.ToArray()).ToArray()
             .ShouldBe(expectedArrays);
     }
